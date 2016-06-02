@@ -33,3 +33,11 @@ docker pull atomney/dockerdesktopnovnc
 chmod +x StartDockerDesktopNOVNC.sh
 ./StartDockerDesktopNOVNC.sh
 ```
+
+### Accessing the noVNC interface
+If you used my start script for your container, it will be listening on port 80
+Just point your browser at:
+
+http://yourdockerhost
+
+

@@ -6,7 +6,7 @@ This is an Ubuntu 14.04 desktop with LXDE and NOVNC in a docker container.
 If you want to build it yourself.
 
 ```
-git clone git@github.com:atomney/dockerdesktopnovnc.git
+git clone https://github.com/atomney/dockerdesktopnovnc.git
 cd dockerdesktopnovnc
 docker build -t atomney/dockerdesktopnovnc .
 ```

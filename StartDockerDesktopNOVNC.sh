@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -td -p 80:6080 atomney/dockerdesktopnovnc
+docker run -td -v /etc/localtime:/etc/localtime:ro -p 80:6080 atomney/dockerdesktopnovnc

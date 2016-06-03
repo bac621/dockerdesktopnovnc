@@ -36,7 +36,7 @@ docker run -td -v /etc/localtime:/etc/localtime:ro -p 80:6080 atomney/dockerdesk
 ```
 
 
-I also created a script that contains the above command.
+There is also an included script that contains the above command.
 ```
 chmod +x StartDockerDesktopNOVNC.sh
 ./StartDockerDesktopNOVNC.sh

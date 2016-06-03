@@ -12,7 +12,7 @@ COPY 02proxy /etc/apt/apt.conf.d/02proxy
 
 # Update and install packages and remove apt proxy file and default desktop image
 RUN apt-get update -y && \
-    apt-get install -y git x11vnc wget python python-numpy unzip xvfb firefox lxde menu mtr terminator htop tmux screen iperf snmp zenmap telnet dnsutils filezilla && \
+    apt-get install -y git x11vnc wget python python-numpy unzip xvfb firefox lxde menu mtr terminator htop tmux screen iperf snmp zenmap telnet dnsutils filezilla netcat wireshark curl && \
     cd /root && git clone https://github.com/kanaka/noVNC.git && \
     cd noVNC/utils && git clone https://github.com/kanaka/websockify websockify && \
     cd /root && \

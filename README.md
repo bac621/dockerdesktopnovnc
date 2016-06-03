@@ -29,10 +29,19 @@ docker pull atomney/dockerdesktopnovnc
 
 ### Running the docker image
 
+
+
+```
+docker run -td -v /etc/localtime:/etc/localtime:ro -p 80:6080 atomney/dockerdesktopnovnc
+```
+
+
+I also created a script that contains the above command.
 ```
 chmod +x StartDockerDesktopNOVNC.sh
 ./StartDockerDesktopNOVNC.sh
 ```
+
 
 ### Accessing the noVNC interface
 If you used my start script for your container, it will be listening on port 80

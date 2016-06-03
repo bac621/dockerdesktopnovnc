@@ -1,6 +1,7 @@
 FROM ubuntu:trusty
 MAINTAINER atomney <atomney+docker@gmail.com>
 
+# Tell APT that humans aren't going to answer package questions
 ENV DEBIAN_FRONTEND noninteractive
 
 # Copy vnc start script into root of container

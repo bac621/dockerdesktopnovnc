@@ -13,10 +13,9 @@ docker build -t atomney/dockerdesktopnovnc .
 
 I use an apt cache so my rebuilds go faster. If you are using one, you will need to modify the 02proxy file and replace the word "aptcache" with the hostname or IP or your apt cache server.
 
-If you don't use an apt cache you will need to remove the following two lines from the Docker file
+If you use an apt cache you will need to uncomment the following line in the 02proxy file
 ```
-COPY 02proxy /etc/apt/apt.conf.d/02proxy
-rm /etc/apt/apt.conf.d/02proxy && \
+#Acquire::http { Proxy "http://aptcache:3142"; };
 ```
 
 

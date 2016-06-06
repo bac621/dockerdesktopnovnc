@@ -1,5 +1,5 @@
 # dockerdesktopnovnc
-This is an Ubuntu 14.04 desktop with LXDE and NOVNC in a docker container.
+This is an Ubuntu 16.04 desktop with LXDE and NOVNC in a docker container.
 
 ## Instructions
 ### Obtaining the docker image

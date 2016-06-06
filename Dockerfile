@@ -18,7 +18,6 @@ RUN apt-get update -y && \
     chmod 0755 /startup.sh && \
     apt-get autoclean && \
     apt-get autoremove && \
-    rm /etc/apt/apt.conf.d/02proxy \
     rm -rf /var/lib/apt/lists/*
 
 # Set the script to run on container launch

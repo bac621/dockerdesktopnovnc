@@ -16,7 +16,7 @@ I use an apt cache so my rebuilds go faster. If you are using one, you will need
 If you don't use an apt cache you will need to remove the following two lines from the Docker file
 ```
 COPY 02proxy /etc/apt/apt.conf.d/02proxy
-rm /etc/apt/apt.conf.d/02proxy \
+rm /etc/apt/apt.conf.d/02proxy && \
 ```
 
 

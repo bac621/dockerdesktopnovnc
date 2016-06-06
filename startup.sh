@@ -11,5 +11,5 @@ export DISPLAY=:1
 Xvfb :1 -screen 0 1600x900x16 &
 sleep 5
 startlxde&
-x11vnc -display :1 -nopw -listen localhost -xkb -ncache 10 -ncache_cr -forever &
-cd /root/noVNC && ln -s vnc_auto.html index.html && ./utils/launch.sh --vnc localhost:5900
+x11vnc -display :1 -nopw -xkb -ncache_cr -forever -shared &
+cd /root/noVNC && ln -s vnc.html index.html && ./utils/launch.sh --web /root/noVNC --vnc localhost:5900

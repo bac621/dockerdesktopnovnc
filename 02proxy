@@ -1,1 +1,1 @@
-Acquire::http { Proxy "http://aptcache:3142"; };
+#Acquire::http { Proxy "http://aptcache:3142"; };

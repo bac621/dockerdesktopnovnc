@@ -7,6 +7,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # Copy vnc start script into root of container
 ADD startup.sh /startup.sh
 
+# Copy proxy file into container
+COPY 02proxy /etc/apt/apt.conf.d/02proxy
+
 # Update and install packages and remove apt proxy file and default desktop image
 RUN apt-get update -y && \
     apt-get install -y git net-tools x11vnc wget python python-numpy unzip xvfb firefox lxde menu mtr terminator htop tmux screen iperf netcat wireshark curl dnsutils snmp zenmap telnet filezilla && \
@@ -15,6 +18,7 @@ RUN apt-get update -y && \
     chmod 0755 /startup.sh && \
     apt-get autoclean && \
     apt-get autoremove && \
+    rm /etc/apt/apt.conf.d/02proxy && \
     rm -rf /var/lib/apt/lists/*
 
 # Set the script to run on container launch

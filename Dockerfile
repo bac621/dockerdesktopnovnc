@@ -24,4 +24,4 @@ RUN apt-get update -y && \
 CMD /startup.sh
 
 # Expose the noVNC port
-EXPOSE 6080
+EXPOSE 6080 5900

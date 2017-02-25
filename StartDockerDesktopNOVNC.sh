@@ -15,12 +15,12 @@ MEMORY=512m
 
 if [ "$1" = "--d1" ]; then
 
-        docker run -td -v /etc/localtime:/etc/localtime:ro -p $D1PORT:5900 --name $D1NAME -m $MEMORY atomney/dockerd$
+        docker run -td -v /etc/localtime:/etc/localtime:ro -p $D1PORT:5900 --name $D1NAME -m $MEMORY atomney/dockerdesktopnovnc
 fi
 
 if [ "$1" = "--d2" ]; then
 
-        docker run -td -v /etc/localtime:/etc/localtime:ro -p $D2PORT:5900 --name $D2NAME -m $MEMORY atomney/dockerd$
+        docker run -td -v /etc/localtime:/etc/localtime:ro -p $D2PORT:5900 --name $D2NAME -m $MEMORY atomney/dockerdesktopnovnc
 fi
 
 if [ "$1" = "--all" ]; then

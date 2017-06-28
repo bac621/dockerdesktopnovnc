@@ -30,13 +30,13 @@ docker run -td -v /etc/localtime:/etc/localtime:ro -p 80:6080 atomney/dockerdesk
 
 There is also an included script that contains the above command.
 ```
-chmod +x StartDockerDesktopNOVNC.sh
-./StartDockerDesktopNOVNC.sh
+chmod +x desktop.sh
+./desktop.sh --start
 ```
 
 
 ### Accessing the noVNC interface
-If you used my start script for your container, it will be listening on port 80
+If you used my start script for your container, it will be listening on port 8080
 Just point your browser at:
 
 http://yourdockerhost

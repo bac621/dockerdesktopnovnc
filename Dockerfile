@@ -15,7 +15,7 @@ COPY xfce4-panel.xml /root/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.
 # Install general packages and remove apt proxy file and default desktop image
 RUN apt-get update -y && \
     apt-get install -y libtasn1-3-bin libglu1-mesa git net-tools wget python python-numpy unzip firefox chromium-browser menu mtr remmina \
-    terminator iputils-ping geany htop tmux screen iperf netcat wireshark curl dnsutils snmp zenmap telnet filezilla nano vim autocutsel && \
+    terminator iputils-ping geany htop tmux screen iperf netcat wireshark curl dnsutils snmp zenmap telnet filezilla nano vim autocutsel sshfs && \
     apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*

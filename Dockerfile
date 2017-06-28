@@ -42,7 +42,6 @@ RUN adduser tux && \
 
 # Copy files into users home folder
 COPY xstartup /home/tux/.vnc/xstartup
-COPY xfce4-panel.xml /home/tux/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
 # Fix permissions on users home folder
 RUN chown -R tux:tux /home/tux && \

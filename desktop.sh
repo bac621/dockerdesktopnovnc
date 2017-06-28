@@ -11,7 +11,7 @@ D1NAME=d1
 D1PORT=8080
 
 # VNC PASSWORD
-VNCPASS=YOURPASSWORD
+VNCPASS=YOURPASS
 
 # MEMORY FOR EACH DESKTOP
 MEMORY=512m
@@ -19,10 +19,14 @@ MEMORY=512m
 # IMAGE NAME
 IMAGENAME=atomney/dockerdesktopnovnc
 
+# CREATE DATA DIRECTORY
+mkdir -p $HERE/data
+
 # START THE CONTAINER
 if [ "$1" = "--start" ]; then
 
  docker run --rm -v /etc/localtime:/etc/localtime:ro -p $D1PORT:6080 \
+        -v $HERE/data:/home/tux/data \
         -e VNCPASS=$VNCPASS --name $D1NAME -m $MEMORY $IMAGENAME &
 fi
 
@@ -31,6 +35,7 @@ if [ "$1" = "--startwithcert" ]; then
 
  docker run --rm -v /etc/localtime:/etc/localtime:ro -p $D1PORT:6080 \
         -v $HERE/self.pem:/root/noVNC/self.pem \
+        -v $HERE/data:/home/tux/data \
         -e VNCPASS=$VNCPASS --name $D1NAME -m $MEMORY $IMAGENAME &
 fi
 

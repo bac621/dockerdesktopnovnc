@@ -15,6 +15,7 @@ RUN apt-get update -y && \
     apt-get install -y libtasn1-3-bin libglu1-mesa git net-tools wget python python-numpy unzip firefox chromium-browser menu mtr remmina \
     iputils-ping geany htop tmux screen iperf netcat wireshark curl dnsutils snmp zenmap telnet filezilla nano vim autocutsel sshfs sudo \
     sysstat openssh-server scrot pavucontrol openconnect && \
+    apt-get remove -y xscreensaver && \
     apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*

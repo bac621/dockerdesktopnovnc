@@ -22,9 +22,9 @@ RUN apt-get update -y && \
 # Install Desktop Environment
 RUN apt-get update -y && \
     apt-get install -y xfce4 xfce4-goodies && \
-    apt-get remove -y xscreensaver && \
     apt-get autoclean && \
     apt-get autoremove && \
+    apt-get remove -y xscreensaver && \
     rm -rf /var/lib/apt/lists/*
 
 # Install novnc

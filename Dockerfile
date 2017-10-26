@@ -12,7 +12,7 @@ COPY startup.sh /startup.sh
 
 # Install general packages and remove apt proxy file and default desktop image
 RUN apt-get update -y && \
-    apt-get install -y libtasn1-3-bin libglu1-mesa git net-tools wget python python-numpy unzip firefox chromium-browser menu mtr remmina \
+    apt-get install -y libtasn1-3-bin libglu1-mesa git net-tools wget python python-numpy unzip firefox menu mtr remmina \
     iputils-ping geany htop tmux screen iperf netcat wireshark curl dnsutils snmp zenmap telnet filezilla nano vim autocutsel sshfs sudo \
     sysstat openssh-server scrot pavucontrol openconnect && \
     apt-get autoclean && \

@@ -25,7 +25,7 @@ IMAGENAME=atomney/dockerdesktopnovnc
 # CREATE DATA DIRECTORY
 mkdir -p $HERE/data
 
-# START THE CONTAINER
+# START THE CONTAINER WITH CERT
 if [ "$1" = "--start" ]; then
 
  docker run --rm -v /etc/localtime:/etc/localtime:ro -p $D1PORT \
@@ -41,21 +41,7 @@ if [ "$1" = "--start" ]; then
         -e VNCPASS=$VNCPASS --name $D1NAME -h $D1NAME -m $MEMORY $IMAGENAME &
 fi
 
-# START THE CONTAINER WITH CERT
-if [ "$1" = "--startnossl" ]; then
-
- docker run --rm -v /etc/localtime:/etc/localtime:ro -p $D1PORT \
-        -p $D1SSH -p $D1WEB -p $D1SOUND \
-        -v /dev/shm:/dev/shm \
-        --device /dev/snd \
-        --device /dev/dri \
-        --group-add audio \
-        --cap-add=NET_ADMIN \
-        -v $HERE/data:/home/tux/data \
-        -e VNCPASS=$VNCPASS --name $D1NAME -h $D1NAME -m $MEMORY $IMAGENAME &
-
-fi
-# START THE CONTAINER WITHOUT SSL
+# START THE CONTAINER NO CERT
 if [ "$1" = "--startnossl" ]; then
 
  docker run --rm -v /etc/localtime:/etc/localtime:ro -p $D1PORT \
